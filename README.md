@@ -2,16 +2,7 @@
 
 Docuquery-AI is a powerful tool designed to provide answers to user queries by leveraging state-of-the-art language models and vector databases. This README will guide you through the setup and usage of Docuquery-AI.
 
-## Table of Contents
 
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
