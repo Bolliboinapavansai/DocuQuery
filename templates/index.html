@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangChain QA Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-box {
+            height: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user-msg {
+            background-color: #e0f7fa;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+
+        .bot-msg {
+            background-color: #c8e6c9;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LangChain QA Bot</h1>
+        <div class="chat-box" id="chat-box">
+            <div class="bot-msg">Welcome! Ask me medical questions?</div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var userMsg = document.getElementById('user-input').value;
+            if (userMsg.trim() !== '') {
+                appendMessage('user', userMsg);
+                sendMessage(userMsg);
+                document.getElementById('user-input').value = '';
+            }
+        });
+
+        function appendMessage(author, message) {
+            var chatBox = document.getElementById('chat-box');
+            var msgDiv = document.createElement('div');
+            msgDiv.classList.add(author + '-msg');
+            msgDiv.textContent = message;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendMessage(userMsg) {
+            fetch('/conversation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    'conversation': [
+                        {'text': userMsg, 'author': 'user'}
+                    ]
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var botResponse = data.conversation[data.conversation.length - 1].text;
+                appendMessage('bot', botResponse);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
