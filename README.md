@@ -1,10 +1,10 @@
-# Docuquery-RAG-Bot
+# DocuQuery 
 
-Docuquery-RAG-Bot is a powerful tool designed to provide answers to user queries by leveraging state-of-the-art language models and vector databases. This README will guide you through the setup and usage of Docuquery-RAG-Bot.
+DocuQuery is a powerful tool designed to provide answers to user queries by leveraging state-of-the-art language models and vector databases. This README will guide you through the setup and usage of DocuQuery.
 
 ## Prerequisites
 
-Before you can start using Docuquery-RAG-Bot, make sure you have the following prerequisites installed on your system:
+Before you can start using DocuQuery, make sure you have the following prerequisites installed on your system:
 
 - Python 3.6 or higher
 - Required Python packages (you can install them using pip):
@@ -19,8 +19,8 @@ Before you can start using Docuquery-RAG-Bot, make sure you have the following p
 1. Clone this repository to your local machine.
 
     ```bash
-    git clone https://github.com/your-username/docuquery-rag-bot.git
-    cd docuquery-rag-bot
+    git clone https://github.com/your-username/DocuQuery.git
+    cd DocuQuery
     ```
 
 2. Create a Python virtual environment (optional but recommended):
@@ -42,7 +42,7 @@ Before you can start using Docuquery-RAG-Bot, make sure you have the following p
 
 ## Getting Started
 
-To get started with Docuquery-RAG-Bot, you need to:
+To get started with DocuQuery, you need to:
 
 1. Set up your environment and install the required packages as described in the Installation section.
 
@@ -54,7 +54,7 @@ To get started with Docuquery-RAG-Bot, you need to:
 
 ## Usage
 
-Docuquery-RAG-Bot can be used for answering document-related queries. To use the bot, you can follow these steps:
+DocuQuery can be used for answering document-related queries. To use the bot, you can follow these steps:
 
 1. Start the bot by running your application or using the provided Python script.
 
@@ -68,7 +68,7 @@ Docuquery-RAG-Bot can be used for answering document-related queries. To use the
 
 ## Contributing
 
-Contributions to Docuquery-RAG-Bot are welcome! If you'd like to contribute to the project, please follow these steps:
+Contributions to DocuQuery are welcome! If you'd like to contribute to the project, please follow these steps:
 
 1. Fork the repository to your own GitHub account.
 
@@ -86,6 +86,6 @@ This project is licensed under the MIT License.
 
 ---
 
-For more information on how to use, configure, and extend Docuquery-RAG-Bot, please refer to the Langchain documentation or contact the project maintainers.
+For more information on how to use, configure, and extend DocuQuery, please refer to the Langchain documentation or contact the project maintainers.
 
-Happy coding with Docuquery-RAG-Bot! 🚀
+Happy coding with DocuQuery! 🚀
